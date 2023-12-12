@@ -2,15 +2,15 @@ from pydantic import BaseModel
 
 
 class ChampionSchema(BaseModel):
-    name: str
-    atk_spd: float
-    damage_1: int
-    damage_2: int
-    damage_3: int
-    range: int
-    life_1: int
-    life_2: int
-    life_3: int
-    mana: int
-    armor: int
-    mr: int
+    Nom: str
+    Atk_spd: float
+    Damage_1: int
+    Damage_2: int
+    Damage_3: int
+    Portee: int
+    Vie_1: int
+    Vie_2: int
+    Vie_3: int
+    Mana: int
+    Armor: int
+    MR: int

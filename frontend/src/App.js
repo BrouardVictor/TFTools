@@ -1,12 +1,23 @@
 import React from 'react';
-import ChampionManager from './ChampionManager'; // Adjust the path as necessary
+import './App.css';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import List from './components/List';
+import Create from './components/Create';
+import Update from './components/Update';
+import Champion from './components/ChampionFetcher';
+import Navigation from './components/Navigation';
 
 function App() {
-    return (
-        <div className="App">
-            <ChampionManager />
-        </div>
-    );
+  return (
+    <Router>
+      <Navigation />
+      <Champion />
+      <Routes>
+
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

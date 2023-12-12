@@ -17,7 +17,7 @@ def get_db():
 
 def get_champion(db: Session, champion_name: str):
     try:
-        return db.query(Champion).filter(Champion.name == champion_name).first()
+        return db.query(Champion).filter(Champion.Nom == champion_name).first()
     except Exception as e:
         raise
 
@@ -35,7 +35,7 @@ def create_champion(db: Session, champion: Champion):
 
 def update_champion(db: Session, champion_name: str, champion: Champion):
     try:
-        db_champion = db.query(Champion).filter(Champion.name == champion_name).first()
+        db_champion = db.query(Champion).filter(Champion.Nom == champion_name).first()
         if db_champion:
             for var, value in vars(champion).items():
                 setattr(db_champion, var, value) if value else None
@@ -48,7 +48,7 @@ def update_champion(db: Session, champion_name: str, champion: Champion):
 
 def delete_champion(db: Session, champion_name: str):
     try:
-        db_champion = db.query(Champion).filter(Champion.name == champion_name).first()
+        db_champion = db.query(Champion).filter(Champion.Nom == champion_name).first()
         if db_champion:
             db.delete(db_champion)
             db.commit()

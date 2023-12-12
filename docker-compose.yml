@@ -11,11 +11,11 @@ services:
   database:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: '00000000'
+      MYSQL_ROOT_PASSWORD: 'admin'
       MYSQL_DATABASE: 'tftools-db'
-      MYSQL_USER: 'tftoolsuser'
-      MYSQL_PASSWORD: 'tftoolspassword'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: '0000'
     ports:
-      - "5432:3306"
+      - "3306:3306"
     volumes:
       - ./database/tftools_db_script.sql:/docker-entrypoint-initdb.d/tftools_db_script.sql

@@ -4,11 +4,11 @@ from sqlalchemy.exc import SQLAlchemyError
 
 def get_sessionlocal():
     try:
-        DB_USER = "tftoolsuser"
-        DB_PASSWORD = "00000000"
-        DB_HOST = "localhost"
+        DB_USER = "root"
+        DB_PASSWORD = "0000"
+        DB_HOST = "127.0.0.1"
         DB_NAME = "tftools-db"
-        DB_PORT = "5432"
+        DB_PORT = "3306"
 
         SQLALCHEMY_DATABASE_URL = f"mysql+mysqlconnector://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
