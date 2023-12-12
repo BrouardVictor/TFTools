@@ -1,0 +1,21 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: '00000000'
+      MYSQL_DATABASE: 'tftools-db'
+      MYSQL_USER: 'tftoolsuser'
+      MYSQL_PASSWORD: 'tftoolspassword'
+    ports:
+      - "5432:3306"
+    volumes:
+      - ./database/tftools_db_script.sql:/docker-entrypoint-initdb.d/tftools_db_script.sql
